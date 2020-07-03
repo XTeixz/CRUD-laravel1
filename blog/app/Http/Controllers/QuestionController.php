@@ -10,7 +10,7 @@ class QuestionController extends Controller
     //
     public function index(){
         $question = QuestionModel::get_all();
-        dd($question);
+        // dd($question);
         return view('question.index', compact('question'));
     }
 
@@ -22,7 +22,7 @@ class QuestionController extends Controller
         // dd($request->all());
         $data = $request->all();
         unset($data['_token']);
-        $question = QuestionModel::save($data);
+        $questions = QuestionModel::save($data);
         if ($question){
             return view('question.index');
         }

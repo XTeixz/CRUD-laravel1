@@ -4,27 +4,19 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>No</th>
+        <th>Judul</th>
+        <th>Pertanyaan</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+      @foreach ($question as $key => $quest)
+          <tr>
+          <td>{{$key + 1}}</td>
+          <td>{{$quest ->judul}}</td>
+          <td>{{$quest ->isi}}</td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
 @endsection
